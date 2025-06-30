@@ -13,3 +13,9 @@ BOOKS = [
 @app.get("/books")
 def show_all_books():
     return BOOKS
+
+@app.get('/books/{book_title}')
+def show_book(book_title: str):
+    for book in BOOKS:
+        if book.get('title').casefold() == book_title.casefold():
+            return book
