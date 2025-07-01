@@ -50,5 +50,5 @@ def create_book(new_book=Body()):
 @app.put('/books/update_book')
 def update_book(updated_book=Body()):
     for i in range(len(BOOKS)):
-        if BOOKS[1].get('title').casefold() == updated_book.get('title').casefold():
+        if BOOKS[i].get('title').casefold() == updated_book.get('title').casefold():
             BOOKS[i] = updated_book
